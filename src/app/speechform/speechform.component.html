@@ -1,0 +1,87 @@
+<form name="form" (ngSubmit)="f.form.valid && savespeechitem()" #f="ngForm">
+  <div class="row" #SpeechformComponent>
+
+
+    <div class="form-group speechcontent col-md-12 col-lg-12 col-xl-12 speechcontent">
+      <label>Speech Text</label>
+      <textarea type="text" rows="5" name="speechtext" class="form-control" [(ngModel)]="model.speechtext"
+        #speechtext="ngModel" [ngClass]="{ 'is-invalid': f.submitted && speechtext.invalid }"
+        placeholder="Enter speech text here..." required>
+    </textarea>
+
+      <div *ngIf="f.submitted && speechtext.invalid" class="invalid-feedback">
+        <div *ngIf="speechtext.errors.required">Speech Text is a required field.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row speechdetails">
+
+
+
+    <div class="form-group col-md-4 col-lg-4 col-xl-4">
+      <label>Author</label>
+      <input type="text"name="speechauthor" class="form-control" [(ngModel)]="model.speechauthor"
+        #speechauthor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && speechauthor.invalid }"
+        placeholder="Author" required>
+   
+
+      <div *ngIf="f.submitted && speechauthor.invalid" class="invalid-feedback">
+        <div *ngIf="speechauthor.errors.required">Author is a required field.</div>
+      </div>
+    </div>
+
+
+    <div class="form-group col-md-4 col-lg-4 col-xl-4">
+      <label>Keywords</label>
+      <input type="text"name="speechkeyword" class="form-control" [(ngModel)]="model.speechkeyword"
+        #speechkeyword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && speechkeyword.invalid }"
+        placeholder="Keywords" required>
+   
+
+      <div *ngIf="f.submitted && speechkeyword.invalid" class="invalid-feedback">
+        <div *ngIf="speechkeyword.errors.required">Keywords is a required field.</div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-4 col-lg-4 col-xl-4">
+      <label>Speech Date</label>
+      <input type="date"name="speechdate" class="form-control" [(ngModel)]="model.speechdate"
+        #speechdate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && speechdate.invalid }"
+        placeholder="mm/dd/yyyy" required>
+   
+
+      <div *ngIf="f.submitted && speechdate.invalid" class="invalid-feedback">
+        <div *ngIf="speechdate.errors.required">Speech Date is a required field.</div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div class="row actionbuttons">
+    <div class="col-md-4 col-lg-4 col-xl-4"><button type="button" (click)="delete()">Delete</button></div>
+    <div class="col-md-4 col-lg-4 col-xl-4"><button type="submit">Save</button>
+      <!-- <button class="btn btn-primary mr-1" type="submit">Register</button>-->
+    </div>
+
+    <div class="col-md-4 col-lg-4 col-xl-4"><button type="button" (click)="sharedwithfunc()">Share</button></div>
+  </div>
+
+  <div class="row shared" *ngIf="displaysharedwith">
+
+    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+      <label>sharedwith</label>
+      <input type="text" name="sharedwith" class="form-control" [(ngModel)]="model.sharedwith"
+        #sharedwith="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sharedwith.invalid }"
+        placeholder="sharedwith" required email>
+
+      <div *ngIf="f.submitted && sharedwith.invalid" class="invalid-feedback">
+        <div *ngIf="sharedwith.errors.email">Email must be valid.</div>
+      </div>
+    </div>
+
+    
+  </div>
+</form>

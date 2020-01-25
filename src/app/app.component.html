@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row topnav">
+
+    <div class="col-md-4 col-lg-4 col-xl-4"><button (click)="allspeech()">View my Speeches</button></div>
+    <div class="col-md-4 col-lg-4 col-xl-4"><button (click)="submitnew()">Submit a new Speech</button></div>
+    <div class="col-md-4 col-lg-4 col-xl-4 searchbut"><button (click)="searchall()">Search all Speeches</button>
+      <div *ngIf="displaysearchbox" class="searchbox">
+        <input type="text" [(ngModel)]="searchtext" placeholder="Enter text to search">
+        <button (click)="searchnow(searchtext)">Go</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mainbody">
+    <div class="left-nav col-md-3 col-lg-3 col-xl-3">
+
+
+      <div class="list-group" #SpeechformComponent *ngFor="let myitem of myspeeches">
+        <a href="#" (click)="fillContent(myitem.speechId)" class="list-group-item"
+           *ngIf="testitem(myitem)">{{ myitem.author }}</a>
+
+      </div>
+
+    </div>
+    <div class="maicontent col-md-9 col-lg-9 col-xl-9">
+
+      <app-speechform 
+      #speechformRef 
+      [speechdetails]="speechdetails"
+      (deletespeech)="removeitem()"
+      (savespeech)="savespeech($event)"
+      ></app-speechform>
+
+
+<!-- <app-speech></app-speech> -->
+
+      
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,24 @@
+.speechcontent textarea{
+    width:100%;
+
+}
+.speechdetails div, .speechdetails input{
+    width:100%;
+
+}
+.actionbuttons {
+    text-align: right;
+    padding-top: 50px;
+}
+.actionbuttons button{
+    width:100%;
+}
+.shared {
+    padding-top:10px;
+}
+.shared input{
+    width:100%;
+}
+.shared button{
+    width:10%;
+}

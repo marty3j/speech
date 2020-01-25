@@ -1,0 +1,50 @@
+.topnav{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.topnav button{
+    width:100%;
+}
+.lastdiv{
+    margin-right:0px !important;
+}
+
+.searchbut input{
+    width:100%;
+    text-align: center;
+}
+.searchbox input{
+    width:80%;
+}
+.searchbox button{
+    width:20%;
+}
+
+.left-nav ul{
+    list-style-type:none
+}
+.maicontent textarea{
+    width:100%;
+
+}
+
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px){
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px){
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px){
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px){
+
+}
